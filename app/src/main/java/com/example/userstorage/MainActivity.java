@@ -2,6 +2,7 @@ package com.example.userstorage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     EditText firstName;
     EditText lastName;
     EditText email;
+    Context context;
 
 
     @Override
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         firstName = findViewById(R.id.firstNameTxt);
         lastName = findViewById(R.id.lastNameTxt);
         email = findViewById(R.id.emailTxt);
+
+        context = MainActivity.this;
+        UserStorage.getInstance().loadUsers(context);
 
     }
 
@@ -69,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         User user = new User(firstName.getText().toString(), lastName.getText().toString(),email.getText().toString(),program,selectedIcon);
         s.addUser(user);
+        UserStorage.getInstance().saveUsers(context);
     }
 
     public void switchToUserList(View view){

@@ -1,13 +1,15 @@
 package com.example.userstorage;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String email;
     private String degreeProgram;
     private int icon;
 
-    public User(String firstName, String lastName, String email, String degreeProgram, int icon){
+    public User(String firstName, String lastName, String email, String degreeProgram, int icon) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -34,4 +36,8 @@ public class User {
     public int getIcon(){
         return icon;
     }
+
+
+
+
 }
