@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class UserStorage {
     final private String FILENAME = "User_Data";
@@ -29,6 +30,8 @@ public class UserStorage {
 
     public void addUser (User user){
         users.add(user);
+        // Always sorting the users by LastName when adding
+        sortUsers();
     }
 
     public void removeUser (int id){
@@ -37,6 +40,11 @@ public class UserStorage {
 
     public ArrayList<User> getUsers() {
         return users;
+    }
+
+    public void sortUsers() {
+        // using a lambda function where it compares the value LastNames and sorts accordingly
+        users.sort( (a, b) -> a.getLastName().toUpperCase().compareTo(b.getLastName().toUpperCase()));
     }
 
     public void saveUsers(Context context){
@@ -57,11 +65,7 @@ public class UserStorage {
             users = (ArrayList<User>) dataReader.readObject();
             dataReader.close();
         } catch (FileNotFoundException e) {
-            try {
-                new File(FILENAME).createNewFile();
-            } catch (IOException ex) {
-                System.out.println("Uuden tiedoston luominen ei onnistunut");
-            }
+            System.out.println("Tiedostoa ei ole vielä olemassa");
         } catch (IOException e) {
             System.out.println("Tietojen lukeminen ei onnistunut");
         } catch (ClassNotFoundException e) {
