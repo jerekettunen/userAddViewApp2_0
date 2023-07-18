@@ -1,6 +1,7 @@
 package com.example.userstorage;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class User implements Serializable {
     private String firstName;
@@ -8,13 +9,15 @@ public class User implements Serializable {
     private String email;
     private String degreeProgram;
     private int icon;
+    private ArrayList<String> degrees = new ArrayList<>();
 
-    public User(String firstName, String lastName, String email, String degreeProgram, int icon) {
+    public User(String firstName, String lastName, String email, String degreeProgram, int icon, ArrayList<String> degrees) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.degreeProgram = degreeProgram;
         this.icon = icon;
+        this.degrees = degrees;
     }
 
     public String getFirstName(){
@@ -37,7 +40,7 @@ public class User implements Serializable {
         return icon;
     }
 
-
-
-
+    public ArrayList<String> getDegrees() {
+        return degrees;
+    }
 }

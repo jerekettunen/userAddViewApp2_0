@@ -61,30 +61,30 @@
         <RadioButton
             android:id="@+id/radio1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:text="Tietotekniikka"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
 
         <RadioButton
             android:id="@+id/radio2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:text="Tuotantotalous"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
 
         <RadioButton
             android:id="@+id/radio3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:text="Laskennallinen tekniikka"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
 
         <RadioButton
             android:id="@+id/radio4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:text="Sähkötekniikka"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
 
     </RadioGroup>
 
@@ -103,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fieldGroup"
+        app:layout_constraintTop_toBottomOf="@+id/avatarImage"
         app:rippleColor="#FF5722" />
 
     <Button
@@ -145,5 +145,42 @@
         app:layout_constraintStart_toStartOf="@+id/avatarSelect"
         app:layout_constraintTop_toBottomOf="@+id/avatarSelect"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <CheckBox
+        android:id="@+id/bachelorCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Kandidaatin tutkinto"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/fieldGroup"
+        app:layout_constraintTop_toBottomOf="@+id/fieldGroup" />
+
+    <CheckBox
+        android:id="@+id/engineerCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="DI tutkinto"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/bachelorCheck"
+        app:layout_constraintTop_toBottomOf="@+id/bachelorCheck" />
+
+    <CheckBox
+        android:id="@+id/doctorCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="Tekniikan tohtorin tutkinto"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/engineerCheck"
+        app:layout_constraintTop_toBottomOf="@+id/engineerCheck" />
+
+    <CheckBox
+        android:id="@+id/honorDoctorCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="Kunnia tohtori"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/doctorCheck"
+        app:layout_constraintTop_toBottomOf="@+id/doctorCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
