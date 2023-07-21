@@ -1,0 +1,12 @@
+Tämä sama dokumentti on lisätty jokaisen viikon palautukseen.
+
+Linkki demovideoon viikot 8-12:
+
+https://youtu.be/l0lQmGE-vo0
+
+repository linkit kaupan päälle:
+https://github.com/jerekettunen/SimpleCalculatorApp
+https://github.com/jerekettunen/userAddViewApp
+https://github.com/jerekettunen/userAddViewApp2_0
+https://github.com/jerekettunen/SimpleNoteApp
+https://github.com/jerekettunen/SimpleNoteApp2_0
